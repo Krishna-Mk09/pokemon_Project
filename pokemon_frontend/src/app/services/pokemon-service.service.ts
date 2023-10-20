@@ -8,5 +8,15 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class PokemonServiceService {
+  private baseURL = "https://pokeapi.co/api/v2"
+
+  constructor(private snackBar: MatSnackBar, private httpClient: HttpClient) {
+  }
+
+
+  getPokemonDetails(pokemon: number | string):Observable<PokemonDetails> {
+    return this.httpClient.get<PokemonDetails>(this.baseURL + 'pokemon/' + pokemon)
+
+  }
 
 }
