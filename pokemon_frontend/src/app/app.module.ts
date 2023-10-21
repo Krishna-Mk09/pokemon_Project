@@ -9,13 +9,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { PokemonDetailsComponent } from './Components/pokemon-details/pokemon-details.component';
 import { PokemonListComponent } from './Components/pokemon-list/pokemon-list.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { PokemonDashboardComponent } from './Components/pokemon-dashboard/pokemon-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonDetailsComponent,
     PokemonListComponent,
-    HeaderComponent
+    HeaderComponent,
+    PokemonDashboardComponent
   ],
   imports: [
     BrowserModule,
