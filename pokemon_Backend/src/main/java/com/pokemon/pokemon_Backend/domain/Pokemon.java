@@ -24,5 +24,5 @@ public class Pokemon {
     private String species;
     private String imageUrl; // URL to an image of the Pokemon
     private String description;
-    private String results;
+    private Object results;
 }
