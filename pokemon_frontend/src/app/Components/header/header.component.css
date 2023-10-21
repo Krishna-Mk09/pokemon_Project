@@ -4,6 +4,20 @@
 
 }
 
+
+.heas1{
+
+  height: 100px;
+  width: 110px;
+  border-radius: 120px;
+
+}
+.heas{
+  height: 100px;
+  width: 110px;
+  border-radius: 120px;
+
+}
 /* Reset default margin and padding for the entire page */
 body, h1, p {
   margin: 0;
@@ -16,8 +30,8 @@ body, h1, p {
   /*background: url("https://res.cloudinary.com/dduwkdctl/image/upload/v1673931280/Kanban%20Project/wave_oawig5.svg") center/cover no-repeat; !* Replace 'pokemon-background.jpg' with your background image *!*/
   color: #fff;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+
   margin-top: auto;
   background-repeat: no-repeat;
   background-color: #0a0a0a;

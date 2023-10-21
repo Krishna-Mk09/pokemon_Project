@@ -14,20 +14,28 @@ export class PokemonServiceService {
   constructor( private httpClient: HttpClient) {
   }
 
+  // getPokemons()
+  // {
+  //   return this.httpClient.get(this.baseURL);
+  // }
+
   getPokemons()
   {
-    return this.httpClient.get(this.baseURL);
+    return this.httpClient.get('https://pokeapi.co/api/v2/pokemon');
   }
 
   getMoreData(name: string) {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
-  getPokemonsById(id: number) {
-    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  }
 
-  getPokemon(pokemon: number | string):Observable<PokemonDetails> {
-    return this.httpClient.get<PokemonDetails>(this.baseURL + 'pokemon/' + pokemon)
 
-  }
+
+  // getPokemonsById(id: number) {
+  //   return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  // }
+  //
+  // getPokemon(pokemon: number | string):Observable<PokemonDetails> {
+  //   return this.httpClient.get<PokemonDetails>(this.baseURL + 'pokemon/' + pokemon)
+  //
+  // }
 }
