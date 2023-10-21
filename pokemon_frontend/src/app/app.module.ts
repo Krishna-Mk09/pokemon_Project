@@ -5,17 +5,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
-import { PokemonDetailsComponent } from './Components/pokemon-details/pokemon-details.component';
-import { PokemonListComponent } from './Components/pokemon-list/pokemon-list.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HeaderComponent } from './Components/header/header.component';
 import { PokemonDashboardComponent } from './Components/pokemon-dashboard/pokemon-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokemonDetailsComponent,
-    PokemonListComponent,
     HeaderComponent,
     PokemonDashboardComponent
   ],
@@ -24,7 +20,8 @@ import { PokemonDashboardComponent } from './Components/pokemon-dashboard/pokemo
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

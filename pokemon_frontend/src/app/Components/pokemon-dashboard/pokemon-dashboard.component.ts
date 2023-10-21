@@ -2,18 +2,17 @@ import {Component, OnInit} from '@angular/core';
 import {PokemonServiceService} from "../../services/pokemon-service.service";
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-pokemon-dashboard',
+  templateUrl: './pokemon-dashboard.component.html',
+  styleUrls: ['./pokemon-dashboard.component.css']
 })
-export class HeaderComponent implements OnInit {
-  filteredPokemons: any[] = [];
+export class PokemonDashboardComponent implements OnInit {
   pokemons: any[] = [];
+  filteredPokemons: any[] = [];
   searchQuery: string = '';
 
   constructor(private service: PokemonServiceService) {
   }
-
   search() {
     if (this.searchQuery == "") {
       this.ngOnInit();
@@ -23,7 +22,6 @@ export class HeaderComponent implements OnInit {
       })
     }
   }
-
   ngOnInit(): void {
     this.service.getPokemons().subscribe((response: any) => {
 
@@ -41,5 +39,3 @@ export class HeaderComponent implements OnInit {
     });
   }
 }
-
-

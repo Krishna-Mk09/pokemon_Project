@@ -1,0 +1,38 @@
+<div class="boxContainer">
+  <table>
+    <tr>
+      <td >
+        <input  class="bar" id="se" type="text" placeholder="Search By PokemonName....." [(ngModel)]="searchQuery"
+                (ngModelChange)="search()">
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="pokemon-grid">
+  <div class="box" *ngFor="let poke of pokemons">
+    <div class="pokemon-card">
+      <img class="imge" [src]="poke.sprites.front_default" alt="{{poke.name}} Image">
+      <strong class="nama">{{poke.name}}</strong>
+      <div class="pokemon-info">
+        <div>
+          <h3>Type</h3>
+          <p>{{poke.types[0].type.name}}</p>
+        </div>
+        <div>
+          <h3>Height</h3>
+          <p>{{poke.height}}</p>
+        </div>
+<!--        <div>-->
+<!--          <strong>Health:</strong>-->
+<!--          <p>{{poke.stats[1].base_stat}}</p>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <strong>Attack Power:</strong>-->
+<!--          <p>{{poke.stats[1].base_stat}}</p>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </div>
+</div>

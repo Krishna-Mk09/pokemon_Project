@@ -1,0 +1,62 @@
+.HeaderMain {
+  display: flex;
+  justify-content: center;
+
+}
+
+/* Reset default margin and padding for the entire page */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Create the header styling */
+.pokemon-header {
+  /*background-image: url("https://res.cloudinary.com/dduwkdctl/image/upload/v1673931280/Kanban%20Project/wave_oawig5.svg");*/
+  background: url("https://res.cloudinary.com/dduwkdctl/image/upload/v1673931280/Kanban%20Project/wave_oawig5.svg") center/cover no-repeat; /* Replace 'pokemon-background.jpg' with your background image */
+  color: #fff;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-top: auto;
+  background-repeat: no-repeat;
+}
+
+/* Style the header title */
+.header-title {
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+
+}
+
+
+/* Add a little accent to the title */
+.accent {
+  color: #FFD700; /* Golden yellow color */
+}
+
+/* Style the header subtitle */
+.header-subtitle {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+/* Style the header content container */
+.header-content {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0%;
+
+}
+
+/* Add a box shadow for a lifted effect */
+.header-content {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
