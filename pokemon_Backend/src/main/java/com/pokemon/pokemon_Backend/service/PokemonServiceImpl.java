@@ -30,8 +30,13 @@ public class PokemonServiceImpl implements PokemonService {
     }
 
     @Override
-    public Optional<Pokemon> getPokemonById(int id) {
-        return this.POKEMON_REPOSITORY.findById(id);
+    public Optional<Pokemon> getPokemonById(int id) throws PokemonNotFoundException {
+        Optional<Pokemon> byId = POKEMON_REPOSITORY.findById(id);
+        if (byId == null) {
+            throw new PokemonNotFoundException();
+        }
+        return byId;
+
     }
 
     @Override

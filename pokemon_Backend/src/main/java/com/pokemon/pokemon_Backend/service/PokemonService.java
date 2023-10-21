@@ -11,7 +11,7 @@ import java.util.Optional;
 public interface PokemonService{
     Pokemon createPokemon(Pokemon pokemon) throws PokemonAlreadyExistsException;
 
-    Optional<Pokemon> getPokemonById(int id);
+    Optional<Pokemon> getPokemonById(int id) throws PokemonNotFoundException;;
 
     Pokemon getPokemonByName(String name) throws PokemonNotFoundException;
 
