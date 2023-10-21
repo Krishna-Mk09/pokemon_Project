@@ -6,6 +6,8 @@ import com.pokemon.pokemon_Backend.domain.Pokemon;
 import com.pokemon.pokemon_Backend.repository.PokemonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +17,23 @@ import java.util.Optional;
 public class PokemonServiceImpl implements PokemonService {
 
     private final PokemonRepository POKEMON_REPOSITORY;
+    private final RestTemplate restTemplate;
 
     @Autowired
-    public PokemonServiceImpl(PokemonRepository pokemonRepository) {
+    public PokemonServiceImpl(PokemonRepository pokemonRepository, RestTemplate restTemplate) {
         POKEMON_REPOSITORY = pokemonRepository;
+        this.restTemplate = restTemplate;
     }
 
+    public void fetchDataAndStoreInMongoDB() {
+        // Fetch data from the external API
+        String apiData = restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon/", String.class);
+
+        // Create an instance of your model and save it to MongoDB
+        Pokemon externalData = new Pokemon();
+        externalData.setResults(apiData);
+        POKEMON_REPOSITORY.save(externalData);
+    }
     @Override
     public Pokemon createPokemon(Pokemon pokemon) throws PokemonAlreadyExistsException {
         if (this.POKEMON_REPOSITORY.existsById(pokemon.getId())) {

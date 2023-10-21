@@ -18,4 +18,6 @@ public interface PokemonService{
     List<String> getAllPokemon();
 
     void deletePokemon(int id);
+
+    void fetchDataAndStoreInMongoDB();
 }

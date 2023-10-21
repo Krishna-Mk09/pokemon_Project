@@ -19,6 +19,12 @@ public class PokemonController {
         POKEMON_SERVICE = pokemonService;
     }
 
+
+    @GetMapping("/fetch-and-store-data")
+    public void fetchAndStoreData() {
+        POKEMON_SERVICE.fetchDataAndStoreInMongoDB();
+    }
+
     @PostMapping("/add")
     public ResponseEntity<?> addPokemon(@RequestBody Pokemon pokemon) throws PokemonAlreadyExistsException {
         try {
