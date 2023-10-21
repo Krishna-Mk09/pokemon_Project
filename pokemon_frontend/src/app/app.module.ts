@@ -8,12 +8,14 @@ import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { PokemonDetailsComponent } from './Components/pokemon-details/pokemon-details.component';
 import { PokemonListComponent } from './Components/pokemon-list/pokemon-list.component';
+import { HeaderComponent } from './Components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonDetailsComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
