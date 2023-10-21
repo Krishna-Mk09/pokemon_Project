@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent {
-
+constructor(private pokemonSer:Pockemo) {
+}
 }

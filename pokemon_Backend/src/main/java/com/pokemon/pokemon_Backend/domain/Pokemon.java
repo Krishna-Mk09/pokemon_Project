@@ -18,6 +18,11 @@ public class Pokemon {
     private int height;
     private int weight;
     private String url;
-
+    private String[] types;
+    private String[] abilities;
+    private int[] stats;
+    private String species;
+    private String imageUrl; // URL to an image of the Pokemon
+    private String description;
 
 }
