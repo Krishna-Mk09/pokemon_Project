@@ -1,5 +1,7 @@
+
+<div class="login">
 <div class="boxContainer">
-  <table>
+  <table class="elements">
     <tr>
       <td >
         <input  class="bar" id="se" type="text" placeholder="Search By PokemonName....." [(ngModel)]="searchQuery"
@@ -16,12 +18,12 @@
       <img class="imge" [src]="poke.sprites.front_default" alt="{{poke.name}} Image">
       <strong class="nama">{{poke.name}}</strong>
       <div class="pokemon-info">
-        <div>
-          <h3>Type</h3>
+        <div  class="flex-content">
+          <h3 class="flex-content1">Type</h3>
           <p>{{poke.types[0].type.name}}</p>
         </div>
-        <div>
-          <h3>Height</h3>
+        <div class="flex-content">
+          <h3 class="flex-content1" >Height</h3>
           <p>{{poke.height}}</p>
         </div>
 <!--        <div>-->
@@ -35,4 +37,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HeaderComponent } from './Components/header/header.component';
 import { PokemonDashboardComponent } from './Components/pokemon-dashboard/pokemon-dashboard.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PokemonDashboardComponent } from './Components/pokemon-dashboard/pokemo
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
