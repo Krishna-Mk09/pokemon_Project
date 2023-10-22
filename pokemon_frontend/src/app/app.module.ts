@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HeaderComponent } from './Components/header/header.component';
 import { PokemonDashboardComponent } from './Components/pokemon-dashboard/pokemon-dashboard.component';
 import {MatCardModule} from "@angular/material/card";
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatCardModule} from "@angular/material/card";
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

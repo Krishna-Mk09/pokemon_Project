@@ -7,6 +7,15 @@
   color: #f4eff6;
 }
 
+.pagenation{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  background-color: rgba(13, 112, 171, 0.98);
+  margin-left: 900px;
+  border-radius: 20px;
+}
+
 .readmore {
   background-color: rgba(15, 126, 192, 0.98);
   color: rgba(245, 242, 242, 0.98);

@@ -10,6 +10,12 @@ export class PokemonDashboardComponent implements OnInit {
   pokemons:any[]=[];
   filteredPokemons: any[] = [];
   searchQuery: string = '';
+  p:number=1;
+  itemsPerPage:number=8
+  totalProduct:any;
+
+
+
   constructor(private service:PokemonServiceService){}
   ngOnInit(): void {
     this.service.getPokemons().subscribe((response: any) => {
@@ -20,6 +26,7 @@ export class PokemonDashboardComponent implements OnInit {
           this.service.getMoreData(pokemonName).subscribe((res: any) => {
             this.pokemons.push(res);
             console.log(this.pokemons);
+            this.totalProduct=response.result.length;
           });
         });
       } else {
