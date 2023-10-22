@@ -1,43 +1,42 @@
-
 <div class="login">
-<div class="boxContainer">
-  <table class="elements">
-    <tr>
-      <td >
-        <input  class="bar" id="se" type="text" placeholder="Search By PokemonName....." [(ngModel)]="searchQuery"
-                (ngModelChange)="search()">
-      </td>
-    </tr>
-  </table>
-</div>
+  <div class="boxContainer">
+    <table class="elements">
+      <tr>
+        <td>
+          <input class="bar" id="se" type="text" placeholder="Search By PokemonName....." [(ngModel)]="searchQuery"
+                 (ngModelChange)="search()">
+        </td>
+      </tr>
+    </table>
+  </div>
 
-<div class="pokemon-grid">
-  <div class="box" *ngFor="let poke of pokemons |paginate:{itemsPerPage:itemsPerPage,currentPage: p}">
-    <div class="pokemon-card">
-      <img class="imge" [src]="poke.sprites.front_default" alt="{{poke.name}} Image">
-      <strong class="nama">{{poke.name}}</strong>
-      <div class="pokemon-info">
-        <div  class="flex-content">
-          <h3 class="flex-content1">Type</h3>
-          <p>{{poke.types[0].type.name}}</p>
+  <div class="pokemon-grid">
+    <div class="box" *ngFor="let poke of pokemons |paginate:{itemsPerPage:itemsPerPage,currentPage: p}">
+      <div class="pokemon-card">
+        <img class="imge" [src]="poke.sprites.front_default" alt="{{poke.name}} Image">
+        <strong class="nama">{{poke.name}}</strong>
+        <div class="pokemon-info">
+          <div class="flex-content">
+            <h3 class="flex-content1">Type</h3>
+            <p>{{poke.types[0].type.name}}</p>
+          </div>
+          <div class="flex-content">
+            <h3 class="flex-content1">Height</h3>
+            <p>{{poke.height}}</p>
+          </div>
+          <button class="readmore">ReadMore</button>
+          <!--        <div>-->
+          <!--          <strong>Health:</strong>-->
+          <!--          <p>{{poke.stats[1].base_stat}}</p>-->
+          <!--        </div>-->
+          <!--        <div>-->
+          <!--          <strong>Attack Power:</strong>-->
+          <!--          <p>{{poke.stats[1].base_stat}}</p>-->
+          <!--        </div>-->
         </div>
-        <div class="flex-content">
-          <h3 class="flex-content1" >Height</h3>
-          <p>{{poke.height}}</p>
-        </div>
-        <button class="readmore">ReadMore</button>
-<!--        <div>-->
-<!--          <strong>Health:</strong>-->
-<!--          <p>{{poke.stats[1].base_stat}}</p>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <strong>Attack Power:</strong>-->
-<!--          <p>{{poke.stats[1].base_stat}}</p>-->
-<!--        </div>-->
       </div>
     </div>
   </div>
-</div>
   <div>
     <pagination-controls (pageChange)="p=$event" class="pagenation"></pagination-controls>
   </div>

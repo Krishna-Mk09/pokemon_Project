@@ -28,12 +28,12 @@ public class PokemonServiceImpl implements PokemonService {
     public void fetchDataAndStoreInMongoDB() {
         // Fetch data from the external API
         String apiData = restTemplate.getForObject("https://pokeapi.co/api/v2/pokemon/", String.class);
-
         // Create an instance of your model and save it to MongoDB
         Pokemon externalData = new Pokemon();
         externalData.setResults(apiData);
         POKEMON_REPOSITORY.save(externalData);
     }
+
     @Override
     public Pokemon createPokemon(Pokemon pokemon) throws PokemonAlreadyExistsException {
         if (this.POKEMON_REPOSITORY.existsById(pokemon.getId())) {

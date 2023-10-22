@@ -7,7 +7,7 @@
   color: #f4eff6;
 }
 
-.pagenation{
+.pagenation {
   display: flex;
   justify-content: flex-end;
   margin-right: 20px;

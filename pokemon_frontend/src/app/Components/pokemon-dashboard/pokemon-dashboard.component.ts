@@ -7,14 +7,15 @@ import {PokemonServiceService} from "../../services/pokemon-service.service";
   styleUrls: ['./pokemon-dashboard.component.css']
 })
 export class PokemonDashboardComponent implements OnInit {
-  pokemons:any[]=[];
+  pokemons: any[] = [];
   filteredPokemons: any[] = [];
   searchQuery: string = '';
-  p:number=1;
-  itemsPerPage:number=5
-  totalPokemon:any;
+  p: number = 1;
+  itemsPerPage: number = 5
+  totalPokemon: any;
 
-  constructor(private service:PokemonServiceService){}
+  constructor(private service: PokemonServiceService) {
+  }
 
   ngOnInit(): void {
     this.service.getPokemons().subscribe((response: any) => {
@@ -35,12 +36,10 @@ export class PokemonDashboardComponent implements OnInit {
 
 
   search() {
-    if(this.searchQuery == "")
-    {
+    if (this.searchQuery == "") {
       this.ngOnInit();
-    }
-    else{
-      this.pokemons=this.pokemons.filter(res=>{
+    } else {
+      this.pokemons = this.pokemons.filter(res => {
         return res.name?.toLowerCase().match(this.searchQuery.toLocaleLowerCase());
       })
     }
