@@ -11,7 +11,6 @@
   </table>
 </div>
 
-
 <div class="pokemon-grid">
   <div class="box" *ngFor="let poke of pokemons |paginate:{itemsPerPage:itemsPerPage,currentPage: p}">
     <div class="pokemon-card">
@@ -40,6 +39,6 @@
   </div>
 </div>
   <div>
-    <pagination-controls (pageChange)="$event" class="pagenation"></pagination-controls>
+    <pagination-controls (pageChange)="p=$event" class="pagenation"></pagination-controls>
   </div>
 </div>
