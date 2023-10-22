@@ -11,7 +11,7 @@ export class PokemonDashboardComponent implements OnInit {
   filteredPokemons: any[] = [];
   searchQuery: string = '';
   p: number = 1;
-  itemsPerPage: number = 5
+  itemsPerPage: number = 6
   totalPokemon: any;
 
   constructor(private service: PokemonServiceService) {
