@@ -14,7 +14,7 @@
   </div>
 
   <div class="pokemon-grid">
-    <div class="box" *ngFor="let poke of pokemons |paginate:{itemsPerPage:itemsPerPage,currentPage: p}">
+    <div class="box" *ngFor="let poke of pokemons |paginate: {itemsPerPage:10, currentPage:page, totalItems:totalPokemons}">
       <div class="pokemon-card">
         <img class="imge" [src]="poke.sprites.front_default" alt="{{poke.name}} Image">
         <strong class="nama">{{poke.name}}</strong>
@@ -33,7 +33,8 @@
       </div>
     </div>
   </div>
-  <div>
-    <pagination-controls (pageChange)="p=$event" class="pagenation"></pagination-controls>
+  <div class="pagi">
+<!--    <pagination-controls (pageChange)="p=$event" class="pagenation"></pagination-controls>-->
+    <pagination-controls (pageChange)="page= $event; pokemons=[]; getPokemons()"  class="pagenation"></pagination-controls>
   </div>
 </div>

@@ -16,9 +16,10 @@ export class PokemonServiceService {
   //   return this.httpClient.get(this.baseURL);
   // }
 
-  getPokemons()
+  getPokemons(limit:number,offset:number)
   {
-    return this.httpClient.get('https://pokeapi.co/api/v2/pokemon');
+    return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
+
   }
 
   getMoreData(name: string) {
@@ -26,13 +27,4 @@ export class PokemonServiceService {
   }
 
 
-
-  // getPokemonsById(id: number) {
-  //   return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  // }
-  //
-  // getPokemon(pokemon: number | string):Observable<PokemonDetails> {
-  //   return this.httpClient.get<PokemonDetails>(this.baseURL + 'pokemon/' + pokemon)
-  //
-  // }
 }

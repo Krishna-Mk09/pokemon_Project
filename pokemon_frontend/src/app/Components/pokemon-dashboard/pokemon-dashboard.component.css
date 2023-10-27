@@ -120,7 +120,10 @@ img {
   height: 300px;
   margin-top: 0px;
   text-decoration-thickness: from-font;
+}
 
+.pagi {
+  margin-left: 450px;
 }
 
 .nama {
