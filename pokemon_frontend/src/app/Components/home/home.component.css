@@ -1,0 +1,189 @@
+/* Homepage Container */
+.homepage {
+  background-color: #c5cece; /* Pokedex orange background */
+color: #0a0a0a;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow for the container */
+  font-family: Cambria;
+  font-size: x-large;
+  font-weight: bold;
+  height: 600px;
+
+  padding-top: 50px;
+
+
+}
+.HeaderMain {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.heas1 {
+
+  height: 100px;
+  width: 110px;
+  border-radius: 120px;
+
+}
+
+.heas {
+  height: 100px;
+  width: 110px;
+  border-radius: 120px;
+
+}
+
+
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+
+.pokemon-header {
+  color: #fff;
+  text-align: center;
+  padding-top: 15px;
+  margin-top: auto;
+  background-repeat: no-repeat;
+  background-color: #0a0a0a;
+
+}
+
+.header-title {
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+
+}
+
+
+.accent {
+  color: #FFD700;
+}
+
+
+.header-subtitle {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+.header-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0%;
+
+}
+.header-content {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.homepage1{
+  background-color: #0a0a0a; /* Pokedex orange background */
+  color: rgba(245, 242, 242, 0.98);
+  text-align: center;
+  padding: 20px;
+  font-family: "Bodoni MT";
+  font-size: x-large;
+  font-weight: bold;
+  height: 270px;
+  margin-top: 150px;
+  padding-top: 20px;
+  width: 100%;
+
+}
+.about{
+  color: #f3f0ec;
+  font-size: x-large;
+  font-family: "Bodoni MT";
+
+}
+.header-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0%;
+
+}
+
+.header-content {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.head11{
+  color: rgba(13, 112, 171, 0.98);
+  font-family: Cambria;
+  font-weight: bold;
+  padding-top: 10px;
+  margin-left: 750px;
+  font-size: x-large;
+
+
+}
+
+/* Homepage Title */
+.homepage h1 {
+  font-size: 2.5em; /* Adjust the font size to your preference */
+  margin: 0; /* Remove default margin */
+  font-family: 'Arial', sans-serif; /* Choose a suitable font-family */
+  color: black;
+}
+
+/* Homepage Paragraphs */
+.homepage p {
+  font-size: 1.2em; /* Adjust the font size to your preference */
+  margin: 20px 0;
+}
+
+/* List Styles */
+.homepage ul {
+  list-style: none; /* Remove bullet points from the list */
+  padding: 0;
+}
+
+.homepage li {
+  margin: 10px 0;
+}
+
+/* Button Styles */
+.homepage button {
+  background-color: red; /* Button background color (Pokedex yellow) */
+  color: #fff; /* Button text color (white) */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
+}
+
+.homepage button:hover {
+  background-color: gold; /* Button background color on hover */
+}
+/* Image Styles */
+.homepage img {
+  max-width: 10%; /* Ensure the image fits within its container */
+  height: auto; /* Maintain the image's aspect ratio */
+  display: block; /* Remove any extra space under the image */
+  margin: 0 auto; /* Center the image horizontally */
+  border-radius: 10px;
+}
+h2{
+  color: black;
+}
+h4{
+  color: black;
+  font-size: 25px;
+  /*font-weight: 30px;*/
+}
+

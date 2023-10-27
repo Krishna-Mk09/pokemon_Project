@@ -12,7 +12,7 @@ export class HomeComponent {
   }
 
   navigateToMainPage() {
-    this.router.navigate(['/cards']);
+    this.router.navigate(['/dashboard']);
   }
 
 }
