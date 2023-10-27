@@ -11,7 +11,7 @@ export class PokemonDashboardComponent implements OnInit {
   filteredPokemons: any[] = [];
   searchQuery: string = '';
   p: number = 1;
-  itemsPerPage: number = 6
+  itemsPerPage: number = 15
   totalPokemon: any;
 
   constructor(private service: PokemonServiceService) {
@@ -25,7 +25,6 @@ export class PokemonDashboardComponent implements OnInit {
           this.service.getMoreData(pokemonName).subscribe((res: any) => {
             this.pokemons.push(res);
             console.log(this.pokemons);
-
           });
         });
       } else {

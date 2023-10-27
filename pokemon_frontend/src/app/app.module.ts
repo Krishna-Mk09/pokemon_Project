@@ -10,12 +10,14 @@ import {HeaderComponent} from './Components/header/header.component';
 import {PokemonDashboardComponent} from './Components/pokemon-dashboard/pokemon-dashboard.component';
 import {MatCardModule} from "@angular/material/card";
 import {NgxPaginationModule} from "ngx-pagination";
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PokemonDashboardComponent
+    PokemonDashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
