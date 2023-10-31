@@ -20,20 +20,7 @@ export class PokemonDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.service.getPokemons().subscribe((response: any) => {
-    //   if (Array.isArray(response.results)) {
-    //     response.results.forEach((element: any) => {
-    //       const pokemonName = element.name; // Get the name from the response
-    //       this.service.getMoreData(pokemonName).subscribe((res: any) => {
-    //         this.pokemons.push(res);
-    //         console.log(this.pokemons);
-    //       });
-    //     });
-    //   } else {
-    //     console.error('Response does not contain an array of results:', response);
-    //   }
-    // });
-this.getPokemons();
+    this.getPokemons();
   }
 
   search() {
@@ -49,13 +36,11 @@ this.getPokemons();
 
   getPokemons() {
     this.service.getPokemons(this.itemsPerPage, this.page + 0).subscribe((response: any) => {
-
       this.totalPokemons = response.count;
-
       if (Array.isArray(response.results)) {
         response.results.forEach((element: any) => {
-          const pokemonName = element.name; // Get the name from the response
-          this.service.getMoreData(pokemonName).subscribe((res: any) => {
+          const pokemonName = element.name;
+          this.service.getData(pokemonName).subscribe((res: any) => {
             this.pokemons.push(res);
             console.log(this.pokemons);
           });
@@ -66,6 +51,11 @@ this.getPokemons();
     });
   }
 
-}
 
+  showDetails: boolean[] = [];
+
+  retrieveDetails(index: number) {
+    this.showDetails[index] = !this.showDetails[index];
+  }
+}
 

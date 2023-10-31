@@ -22,7 +22,7 @@ export class PokemonServiceService {
 
   }
 
-  getMoreData(name: string) {
+  getData(name: string) {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
 

@@ -1,6 +1,3 @@
-
-
-
 <div class="login">
   <div class="boxContainer">
     <table class="elements">
@@ -14,7 +11,8 @@
   </div>
 
   <div class="pokemon-grid">
-    <div class="box" *ngFor="let poke of pokemons |paginate: {itemsPerPage:10, currentPage:page, totalItems:totalPokemons}">
+    <div class="box"
+         *ngFor="let poke of pokemons |paginate: {itemsPerPage:10, currentPage:page, totalItems:totalPokemons};let i=index">
       <div class="pokemon-card">
         <img class="imge" [src]="poke.sprites.front_default" alt="{{poke.name}} Image">
         <strong class="nama">{{poke.name}}</strong>
@@ -27,14 +25,38 @@
             <h3 class="flex-content1">Height</h3>
             <p>{{poke.height}}</p>
           </div>
-          <button class="readmore">ReadMore</button>
+          <div *ngIf="showDetails[i]">
+            <div>
+              <div>
+                <strong class="flex-content">Base-Experience:</strong>
+                <p class="flex-content1">{{poke.base_experience}}</p>
+                <strong class="flex-content">Order:</strong>
+                <p class="flex-content1">{{poke.order}}</p>
+              </div>
+              <div>
+                <strong class="flex-content">Power:</strong>
+                <p class="flex-content1">{{poke.stats[1].base_stat}}</p>
+              </div>
+              <div>
+                <strong class="flex-content">Game-Index:</strong>
+                <p class="flex-content1">{{poke.game_indices[0].game_index}}</p>
+              </div>
+              <div>
+                <strong class="flex-content">Ability</strong>
+                <p class="flex-content1">{{poke.abilities[0].ability.name}}</p>
+              </div>
+            </div>
+          </div>
+          <button class="readmore" (click)="retrieveDetails(i)">{{showDetails[i] ? 'ReadLess' : 'ReadMore'}}</button>
+
 
         </div>
       </div>
     </div>
   </div>
   <div class="pagi">
-<!--    <pagination-controls (pageChange)="p=$event" class="pagenation"></pagination-controls>-->
-    <pagination-controls (pageChange)="page= $event; pokemons=[]; getPokemons()"  class="pagenation"></pagination-controls>
+    <!--    <pagination-controls (pageChange)="p=$event" class="pagenation"></pagination-controls>-->
+    <pagination-controls (pageChange)="page= $event; pokemons=[]; getPokemons()"
+                         class="pagenation"></pagination-controls>
   </div>
 </div>
