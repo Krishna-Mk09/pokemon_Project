@@ -11,18 +11,12 @@ export class PokemonServiceService {
   constructor( private httpClient: HttpClient) {
   }
 
-  // getPokemons()
-  // {
-  //   return this.httpClient.get(this.baseURL);
-  // }
-
-  getPokemons(limit:number,offset:number)
-  {
+  getAllPokemons(limit:number, offset:number) {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
   //  http://localhost:8080/pokemon/fetch-and-store-data
   }
 
-  getData(name: string) {
+  getAllPokemonData(name: string) {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
 

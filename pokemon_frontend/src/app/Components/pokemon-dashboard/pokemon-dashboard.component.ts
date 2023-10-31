@@ -10,11 +10,9 @@ import {Router} from "@angular/router";
 export class PokemonDashboardComponent implements OnInit {
   pokemons: any[] = [];
   showDetails: boolean[] = [];
-  filteredPokemons: any[] = [];
   searchQuery: string = '';
   p: number = 1;
   itemsPerPage: number = 10
-  totalPokemon: any;
   page = 1;
   totalPokemons: number | undefined
 
@@ -27,30 +25,28 @@ export class PokemonDashboardComponent implements OnInit {
 
 
   search() {
-    const query = this.searchQuery.trim().toLowerCase(); // Trim whitespace and convert query to lowercase
+    const query = this.searchQuery.trim().toLowerCase();
     if (query === "") {
-      this.ngOnInit(); // Reset the list if the search query is empty
+      this.ngOnInit();
     } else {
       this.pokemons = this.pokemons.filter(pokemon => {
-        // Check if the name exists and is a string
         if (pokemon.name && typeof pokemon.name === 'string') {
-          const pokemonName = pokemon.name.toLowerCase(); // Convert Pokémon name to lowercase
-          // For exact match use ===, for partial match use .includes()
-          return pokemonName.includes(query); // Check if the Pokemon name contains the search query
+          const pokemonName = pokemon.name.toLowerCase();
+          return pokemonName.includes(query);
         }
-        return false; // If name is null, undefined, or not a string, exclude it from the results
+        return false;
       });
     }
   }
 
 
   getPokemons() {
-    this.service.getPokemons(this.itemsPerPage, this.page + 0).subscribe((response: any) => {
+    this.service.getAllPokemons(this.itemsPerPage, this.page + 0).subscribe((response: any) => {
       this.totalPokemons = response.count;
       if (Array.isArray(response.results)) {
         response.results.forEach((element: any) => {
           const pokemonName = element.name;
-          this.service.getData(pokemonName).subscribe((res: any) => {
+          this.service.getAllPokemonData(pokemonName).subscribe((res: any) => {
             this.pokemons.push(res);
             console.log(this.pokemons);
           });

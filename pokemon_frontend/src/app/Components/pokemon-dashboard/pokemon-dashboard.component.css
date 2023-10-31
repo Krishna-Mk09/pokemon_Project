@@ -126,13 +126,14 @@ img {
   margin-left: 450px;
 }
 .button1{
-  margin-left: 20px;
+  margin-left: 100px;
   background-color: steelblue;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
   border-radius: 20px;
+
 }
 .nama {
   font-size: x-large;

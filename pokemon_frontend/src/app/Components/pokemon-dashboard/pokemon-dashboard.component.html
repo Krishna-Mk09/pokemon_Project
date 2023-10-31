@@ -3,7 +3,7 @@
     <table class="elements">
       <tr>
         <td>
-          <input class="bar" id="se" type="text" placeholder="Search By PokemonName....." [(ngModel)]="searchQuery"
+          <input class="bar" id="se" type="text" placeholder="Search PokemonName..." [(ngModel)]="searchQuery"
                  (ngModelChange)="search()">
         </td>
       </tr>
@@ -12,19 +12,20 @@
 
   <div class="pokemon-grid">
     <div class="box"
-         *ngFor="let poke of pokemons |paginate: {itemsPerPage:10, currentPage:page, totalItems:totalPokemons};let i=index">
+         *ngFor="let poke of pokemons | paginate: {itemsPerPage:10, currentPage:page, totalItems:totalPokemons};let i=index">
       <div class="pokemon-card">
-        <img class="imge" [src]="poke.sprites.front_default" alt="{{poke.name}} Image">
-        <strong class="nama">{{poke.name}}</strong>
+        <img class="imge" [src]="poke.sprites.front_shiny" alt="{{poke.name}} Image">
+        <h1 class="nama">{{poke.name}}</h1>
         <div class="pokemon-info">
           <div class="flex-content">
             <h3 class="flex-content1">Type</h3>
-            <p>{{poke.types[0].type.name}}</p>
+            <p>{{poke.types[0].type.name}}<
           </div>
           <div class="flex-content">
             <h3 class="flex-content1">Height</h3>
             <p>{{poke.height}}</p>
           </div>
+
           <div *ngIf="showDetails[i]">
             <div>
               <div>
@@ -48,16 +49,12 @@
             </div>
           </div>
           <button class="readmore" (click)="retrieveDetails(i)">{{showDetails[i] ? 'ReadLess' : 'ReadMore'}}</button>
-
-
         </div>
       </div>
     </div>
   </div>
-  <button class="button1" routerLink="/home">Back</button>
+ <div> <button class="button1" routerLink="/home">Back</button>x</div>
   <div class="pagi">
-    <!--    <pagination-controls (pageChange)="p=$event" class="pagenation"></pagination-controls>-->
-    <pagination-controls (pageChange)="page= $event; pokemons=[]; getPokemons()"
-                         class="pagenation"></pagination-controls>
+    <pagination-controls (pageChange)="page= $event; pokemons=[]; getPokemons()" class="pagenation"></pagination-controls>
   </div>
 </div>
