@@ -25,15 +25,24 @@ export class PokemonDashboardComponent implements OnInit {
     this.getPokemons();
   }
 
+
   search() {
-    if (this.searchQuery == "") {
-      this.ngOnInit();
+    const query = this.searchQuery.trim().toLowerCase(); // Trim whitespace and convert query to lowercase
+    if (query === "") {
+      this.ngOnInit(); // Reset the list if the search query is empty
     } else {
-      this.pokemons = this.pokemons.filter(res => {
-        return res.name?.toLowerCase().match(this.searchQuery.toLocaleLowerCase());
-      })
+      this.pokemons = this.pokemons.filter(pokemon => {
+        // Check if the name exists and is a string
+        if (pokemon.name && typeof pokemon.name === 'string') {
+          const pokemonName = pokemon.name.toLowerCase(); // Convert Pokémon name to lowercase
+          // For exact match use ===, for partial match use .includes()
+          return pokemonName.includes(query); // Check if the Pokemon name contains the search query
+        }
+        return false; // If name is null, undefined, or not a string, exclude it from the results
+      });
     }
   }
+
 
   getPokemons() {
     this.service.getPokemons(this.itemsPerPage, this.page + 0).subscribe((response: any) => {
