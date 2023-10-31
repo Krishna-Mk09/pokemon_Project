@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PokemonServiceService} from "../../services/pokemon-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-pokemon-dashboard',
@@ -16,7 +17,7 @@ export class PokemonDashboardComponent implements OnInit {
   page = 1;
   totalPokemons: number | undefined
 
-  constructor(private service: PokemonServiceService) {
+  constructor(private service: PokemonServiceService,private router:Router) {
   }
 
   ngOnInit(): void {
@@ -57,5 +58,7 @@ export class PokemonDashboardComponent implements OnInit {
   retrieveDetails(index: number) {
     this.showDetails[index] = !this.showDetails[index];
   }
+
+
 }
 

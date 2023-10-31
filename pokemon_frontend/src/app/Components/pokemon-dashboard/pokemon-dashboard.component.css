@@ -125,7 +125,15 @@ img {
 .pagi {
   margin-left: 450px;
 }
-
+.button1{
+  margin-left: 20px;
+  background-color: steelblue;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 20px;
+}
 .nama {
   font-size: x-large;
   font-weight: bold;
