@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class PokemonDashboardComponent implements OnInit {
   pokemons: any[] = [];
+  showDetails: boolean[] = [];
   filteredPokemons: any[] = [];
   searchQuery: string = '';
   p: number = 1;
@@ -34,7 +35,6 @@ export class PokemonDashboardComponent implements OnInit {
     }
   }
 
-
   getPokemons() {
     this.service.getPokemons(this.itemsPerPage, this.page + 0).subscribe((response: any) => {
       this.totalPokemons = response.count;
@@ -47,18 +47,14 @@ export class PokemonDashboardComponent implements OnInit {
           });
         });
       } else {
-        console.error('Response does not contain an array of results:', response);
+        console.error('NOO RESPONSE', response);
       }
     });
   }
 
 
-  showDetails: boolean[] = [];
-
   retrieveDetails(index: number) {
     this.showDetails[index] = !this.showDetails[index];
   }
-
-
 }
 
