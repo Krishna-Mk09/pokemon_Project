@@ -19,7 +19,7 @@ export class PokemonServiceService {
   getPokemons(limit:number,offset:number)
   {
     return this.httpClient.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
-
+  //  http://localhost:8080/pokemon/fetch-and-store-data
   }
 
   getData(name: string) {
